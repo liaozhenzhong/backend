@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 import aws_cdk as cdk
 
-from backend.backend_stack import BackendStack
-
+from lib.dynamodb_stack import DynamoDBStack
 
 app = cdk.App()
-BackendStack(app, "BackendStack")
+DynamoDBStack(app, "DynamoDBStack")
 
 app.synth()

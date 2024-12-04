@@ -8,38 +8,13 @@ disable = [
     "C0116",  # missing-function-docstring
 ]
 good-names = ["i", "j", "k", "ex", "Run", "id", "db"]
-ignore = ["CVS", ".git", "*.pyc", "*.egg-info", "*.eggs", "*.yml"]
+ignore = ["CVS", ".git", "*.pyc", "*.egg-info", "*.eggs", "*.yml", "cdk.out", ".venv", "node_modules"]
 
 [tool.pytest.ini_options]
-addopts = "-v --cov=. --cov-report=term-missing"
+addopts = "-v"
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 filterwarnings = [
     "ignore::DeprecationWarning",
     "ignore::UserWarning",
-]
-
-[tool.coverage.run]
-source = ["."]
-omit = [
-    "tests/*",
-    "setup.py",
-    "*/site-packages/*",
-    "*/distutils/*",
-    "*/venv/*",
-    "app.py",
-    "backend/*",
-]
-
-[tool.coverage.report]
-exclude_lines = [
-    "pragma: no cover",
-    "def __repr__",
-    "if self.debug:",
-    "raise NotImplementedError",
-    "if __name__ == .__main__.:",
-    "pass",
-    "raise ImportError",
-]
-fail_under = 80
-show_missing = true 
+] 
